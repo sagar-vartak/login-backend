@@ -10,7 +10,7 @@ dotenv.config({
 });
 
 mongoose.connect(
-  process.env.DATABASE_URL,
+  process.env.MONGO_URL || process.env.DATABASE_URL,
   {
     useCreateIndex: true,
     useNewUrlParser: true,
