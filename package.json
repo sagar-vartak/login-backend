@@ -15,7 +15,7 @@
   "author": "Sagar'",
   "license": "ISC",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/sagar-vartak/login-backend.git/issues"
   },
   "engines": {
     "node": "10.14"
