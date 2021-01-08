@@ -4,8 +4,7 @@
   "description": "app for todo with login",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "test": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon app.js"
   },
   "keywords": [
