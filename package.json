@@ -4,6 +4,7 @@
   "description": "app for todo with login",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "node app.js",
     "dev": "nodemon app.js"
   },
