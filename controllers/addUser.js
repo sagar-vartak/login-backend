@@ -10,7 +10,6 @@ const addUser = async (req, res) => {
   User.findOne({ email: email })
     .then((result) => {
       if (result) {
-        let data = { result };
         sendResponse(200, "USER ALREADY EXISTS", result.email, req, res);
       }
       if (!result) {
