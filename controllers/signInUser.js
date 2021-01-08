@@ -34,17 +34,21 @@ const signInUser = async (req, res) => {
                     expiresIn: "1h",
                   }
                 );
-                jwtToken.then((result) => {
-                  console.log(result);
-                  res.cookie("jwt", result);
-                  sendResponse(
-                    200,
-                    "Successfully logged in",
-                    { jwt: result },
-                    req,
-                    res
-                  );
-                });
+                jwtToken
+                  .then((result) => {
+                    console.log(result);
+                    res.cookie("jwt", result);
+                    sendResponse(
+                      200,
+                      "Successfully logged in",
+                      { jwt: result },
+                      req,
+                      res
+                    );
+                  })
+                  .catch((err) => {
+                    res.send(err);
+                  });
               } catch (err) {
                 console.log(err);
                 return sendErrorMessage(
