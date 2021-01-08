@@ -15,7 +15,7 @@ const signInUser = async (req, res) => {
   newUser.email = req.body.email;
   newUser.password = req.body.password;
 
-  await User.findOne({ email: newUser.email })
+  await User.find({ email: newUser.email })
     .then((profile) => {
       if (!profile) {
         console.log(newUser.email);
