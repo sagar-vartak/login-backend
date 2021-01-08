@@ -11,7 +11,7 @@ const addUser = async (req, res) => {
     .then((result) => {
       if (result) {
         let data = { result };
-        sendResponse(200, "USER ALREADY EXISTS", data, req, res);
+        sendResponse(200, "USER ALREADY EXISTS", result.email, req, res);
       }
       if (!result) {
         try {
