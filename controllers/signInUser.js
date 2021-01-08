@@ -24,7 +24,7 @@ const signInUser = async (req, res) => {
         const match = bcrypt
           .compare(newUser.password, profile.password)
           .then((result) => {
-            console.log(result);
+            //console.log(result);
             if (result) {
               try {
                 let jwtToken = generateToken(
@@ -36,7 +36,7 @@ const signInUser = async (req, res) => {
                 );
                 jwtToken
                   .then((result) => {
-                    console.log(result);
+                    //console.log(result);
                     res.cookie("jwt", result);
                     sendResponse(
                       200,

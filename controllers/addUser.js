@@ -22,7 +22,7 @@ const addUser = async (req, res) => {
               if (err) {
                 res.send(err);
               }
-              console.log(hash);
+              //console.log(hash);
               password = hash;
               let data = await new User({
                 email: email,
