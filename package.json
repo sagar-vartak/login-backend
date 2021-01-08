@@ -18,7 +18,7 @@
     "url": "https://github.com/sagar-vartak/login-backend.git/issues"
   },
   "engines": {
-    "node": "10.14"
+    "node": "10.x"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
