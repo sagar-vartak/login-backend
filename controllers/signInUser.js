@@ -60,7 +60,14 @@ const signInUser = async (req, res) => {
                 );
               }
             } else {
-              res.send("Check Credentials Before Logging Again");
+              //res.send("Check Credentials Before Logging Again");
+              sendResponse(
+                200,
+                "Check Credentials Before Logging Again",
+                result.email,
+                req,
+                res
+              );
             }
           })
           .catch((err) => {

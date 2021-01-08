@@ -15,9 +15,13 @@ const addUser = async (req, res) => {
       if (!result) {
         try {
           bcrypt.genSalt(10, (err, salt) => {
-            if (err) return res.send(err);
+            if (err) {
+              res.send(err);
+            }
             bcrypt.hash(password, salt, async (err, hash) => {
-              if (err) return next(err);
+              if (err) {
+                res.send(err);
+              }
               console.log(hash);
               password = hash;
               let data = await new User({
