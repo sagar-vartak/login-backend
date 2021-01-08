@@ -1,7 +1,7 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
-
+var cors = require("cors");
 const router = require("./routes/userRoutes");
 
 dotenv.config({
@@ -25,6 +25,7 @@ mongoose.connect(
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use("/", router);
