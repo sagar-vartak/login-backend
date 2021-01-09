@@ -19,7 +19,7 @@ const signInUser = async (req, res) => {
     .then((profile) => {
       if (!profile) {
         console.log(newUser.email);
-        res.send("User not exist");
+        sendResponse(200, "User does not exists", newUser.email, req, res);
       } else {
         const match = bcrypt
           .compare(newUser.password, profile.password)
@@ -71,13 +71,13 @@ const signInUser = async (req, res) => {
             }
           })
           .catch((err) => {
-            res.send(err);
+            sendResponse(404, "error", err, req, res);
           });
       }
     })
     .catch((err) => {
       console.log("Error is ", err);
-      res.send(err);
+      sendResponse(404, "error", err, req, res);
     });
 };
 
