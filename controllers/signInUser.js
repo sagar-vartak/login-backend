@@ -10,12 +10,12 @@ const sendErrorMessage = require("../helpers/sendError");
 const sendResponse = require("../helpers/sendResponse");
 const cons = require("consolidate");
 
-const signInUser = (req, res) => {
+const signInUser = async (req, res) => {
   var newUser = {};
   newUser.email = req.body.email;
   newUser.password = req.body.password;
 
-  User.findOne({ email: newUser.email })
+  await User.findOne({ email: newUser.email })
     .then((profile) => {
       if (!profile) {
         console.log(newUser.email);
